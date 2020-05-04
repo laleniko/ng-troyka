@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Meta, Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-main-page',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private title: Title,
+    private meta: Meta
+  ) { }
 
   ngOnInit(): void {
+    this.title.setTitle('Тройка - транспортная карта Москвы');
+    this.meta.addTags([
+      {name: 'keywords', content: 'Вся информация о карте тройка. Тарифы 2020 года.'},
+      {name: 'description', content: 'транспортная карта, Тройка, Москва, тарифы'}
+      ]
+    );
   }
 
 }

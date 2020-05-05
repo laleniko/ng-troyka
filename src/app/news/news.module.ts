@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NewsComponent } from './news.component';
 import { NewsRoutingModule } from './news-routing.module';
+import {HttpClientModule} from '@angular/common/http';
 
 
 
@@ -9,7 +10,8 @@ import { NewsRoutingModule } from './news-routing.module';
   declarations: [NewsComponent],
   imports: [
     CommonModule,
-    NewsRoutingModule
+    NewsRoutingModule,
+    HttpClientModule
   ]
 })
 export class NewsModule { }

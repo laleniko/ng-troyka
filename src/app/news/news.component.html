@@ -1,1 +1,7 @@
-<p>news works!</p>
+<h1>Новости</h1>
+
+<section class="news-block" *ngFor="let news of news">
+  <time class="news-block_time" [dateTime]="news.publish_date">{{news.publish_date}}</time>
+  <h2>{{news.header}}</h2>
+  <p>{{news.short_text}} ....<a href="news/megafon-i-trojka.html">читать далее</a></p>
+</section>

@@ -1,7 +1,7 @@
 <h1>Новости</h1>
 
 <section class="news-block" *ngFor="let news of news">
-  <time class="news-block_time" [dateTime]="news.publish_date">{{news.publish_date}}</time>
+  <time class="news-block_time" [dateTime]="news.publish_date">{{news.publish_date | date:'mediumDate'}}</time>
   <h2>{{news.news_header}}</h2>
   <p>{{news.short_text}} ....<a [routerLink]="'/news/' + news.link" [queryParams]="{id: news.id}">читать далее</a></p>
 </section>

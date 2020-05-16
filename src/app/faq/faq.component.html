@@ -1,1 +1,6 @@
-<p>faq works!</p>
+<h1>Вопросы и ответы</h1>
+<nz-collapse nzAccordion>
+    <nz-collapse-panel [nzHeader]="faq.header" *ngFor="let faq of faq">
+      <p>{{faq.text}}</p>
+    </nz-collapse-panel>
+</nz-collapse>

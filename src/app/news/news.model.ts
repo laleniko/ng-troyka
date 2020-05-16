@@ -10,5 +10,6 @@ export interface NewsModel {
   description: string;
   link: string;
   image: number;
+  image_alt: string;
   imageLink?: string;
 }

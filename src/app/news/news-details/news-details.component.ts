@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { NewsService } from '../news.service';
 import { NewsModel } from '../news.model';
 import { tap, mergeMap, map } from 'rxjs/operators';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-news-details',
@@ -16,7 +17,9 @@ export class NewsDetailsComponent implements OnInit, OnDestroy {
 
   constructor(
     private activateRoute: ActivatedRoute,
-    private newsService: NewsService
+    private newsService: NewsService,
+    private title: Title,
+    private meta: Meta
   ) { }
 
   ngOnInit(): void {
@@ -24,7 +27,10 @@ export class NewsDetailsComponent implements OnInit, OnDestroy {
       map(data =>  +data.id),
       mergeMap((data) => {
         return this.newsService.getNewsItem(data).pipe(
-          tap(news => this.newsItem = news),
+          tap(news => {
+            this.newsItem = news;
+            this.setMeta();
+          }),
           map(news => news.image)
         );
       }),
@@ -38,6 +44,12 @@ export class NewsDetailsComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.routerSub.unsubscribe();
+  }
+
+  private setMeta(): void {
+    this.title.setTitle(this.newsItem.title);
+    this.meta.updateTag({name: 'keywords', content: this.newsItem.keywords});
+    this.meta.updateTag({name: 'description', content: this.newsItem.description});
   }
 
 }

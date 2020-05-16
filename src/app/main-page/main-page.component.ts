@@ -15,11 +15,8 @@ export class MainPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.title.setTitle('Тройка - транспортная карта Москвы');
-    this.meta.addTags([
-      {name: 'keywords', content: 'Вся информация о карте тройка. Тарифы 2020 года.'},
-      {name: 'description', content: 'транспортная карта, Тройка, Москва, тарифы'}
-      ]
-    );
+    this.meta.updateTag({name: 'keywords', content: 'Вся информация о карте тройка. Тарифы 2020 года.'});
+    this.meta.updateTag({name: 'description', content: 'транспортная карта, Тройка, Москва, тарифы'});
   }
 
 }

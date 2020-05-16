@@ -24,7 +24,7 @@ export class NewsComponent implements OnInit, OnDestroy {
       this.news = data;
       this.news = this.news.sort((a: NewsModel, b: NewsModel) =>
       new Date(a.publish_date).getTime() - new Date(b.publish_date).getTime()
-      );
+      ).reverse();
     });
 
     this.title.setTitle('Тройка - новости');

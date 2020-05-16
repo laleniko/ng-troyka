@@ -14,6 +14,7 @@ import { LayoutModule } from './layout/layout.module';
 import { MainPageComponent } from './main-page/main-page.component';
 import { ZorroModule } from './zorro/zorro.module';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+import { NgxMetrikaModule } from '@kolkov/ngx-metrika';
 
 registerLocaleData(ru);
 
@@ -30,7 +31,15 @@ registerLocaleData(ru);
     HttpClientModule,
     BrowserAnimationsModule,
     LayoutModule,
-    ZorroModule
+    ZorroModule,
+    NgxMetrikaModule.forRoot({
+      id: 54011872,
+      defer: true,
+      webvisor: true,
+      clickmap: true,
+      trackLinks: true,
+      accurateTrackBounce: true,
+    })
   ],
   providers: [{ provide: NZ_I18N, useValue: ru_RU }],
   bootstrap: [AppComponent]

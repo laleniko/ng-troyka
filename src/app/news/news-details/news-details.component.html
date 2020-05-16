@@ -1,0 +1,6 @@
+<section *ngIf="newsItem">
+    <time [dateTime]="newsItem.publish_date">{{newsItem.publish_date}}</time>
+    <h2>{{newsItem.news_header}}</h2>
+    <img [src]="newsItem.imageLink" alt="">
+    <p>{{newsItem.text}}</p>
+  </section>

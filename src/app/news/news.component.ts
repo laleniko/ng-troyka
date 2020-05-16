@@ -17,7 +17,6 @@ export class NewsComponent implements OnInit {
   ngOnInit(): void {
     this.newsService.getNews().subscribe((data: NewsModel[]) => {
       this.news = data;
-      console.log(this.news)
     });
   }
 

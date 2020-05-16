@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Meta, Title} from '@angular/platform-browser';
+import { NgxMetrikaService } from '@kolkov/ngx-metrika';
 
 @Component({
   selector: 'app-price',
@@ -10,7 +11,8 @@ export class PriceComponent implements OnInit {
 
   constructor(
     private title: Title,
-    private meta: Meta
+    private meta: Meta,
+    private ym: NgxMetrikaService
   ) { }
 
   ngOnInit(): void {
@@ -19,6 +21,8 @@ export class PriceComponent implements OnInit {
     this.meta.updateTag({
       name: 'description',
       content: 'транспортная карта Тройка Москва, стоимость, тарифы, билет, единый, кошелек, ТАТ'});
+
+    this.ym.hit.emit(); // TODO:check
   }
 
 }

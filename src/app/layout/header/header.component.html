@@ -1,24 +1,56 @@
-<nav>
-  <ul nz-menu nzMode="horizontal" nzTheme="dark" nz-row nzType="flex" nzJustify="center">
-    <li class="main-page-link" nz-menu-item [routerLink]="['/']">
-      <img src="../../../assets/icons/header/card.png">
-      Главная
-    </li>
-    <li nz-menu-item [routerLink]="['/price']" [routerLinkActive]="['ant-menu-item-selected']">
-      <i nz-icon nzType="bars"></i>
-      Тарифы
-    </li>
-    <li nz-menu-item [routerLink]="['/faq']" [routerLinkActive]="['ant-menu-item-selected']">
-      <i nz-icon nzType="question"></i>
-      Вопросы и ответы
-    </li>
-    <li nz-menu-item [routerLink]="['/news']" [routerLinkActive]="['ant-menu-item-selected']">
-      <i nz-icon nzType="notification"></i>
-      Новости
-    </li>
-    <li nz-menu-item [routerLink]="['/bonus']" [routerLinkActive]="['ant-menu-item-selected']">
-      <i nz-icon nzType="credit-card"></i>
-      Бонусная программа
-    </li>
-  </ul>
-</nav>
+<ng-container *ngIf="currentWindowWidth > 850">
+  <nav>
+    <ul nz-menu nzMode="horizontal" nzTheme="dark" nz-row nzType="flex" nzJustify="center">
+      <li class="main-page-link" nz-menu-item [routerLink]="['/']">
+        <img src="../../../assets/icons/header/card.png">
+        Главная
+      </li>
+      <li nz-menu-item [routerLink]="['/price']" [routerLinkActive]="['ant-menu-item-selected']">
+        <i nz-icon nzType="bars"></i>
+        Тарифы
+      </li>
+      <li nz-menu-item [routerLink]="['/faq']" [routerLinkActive]="['ant-menu-item-selected']">
+        <i nz-icon nzType="question"></i>
+        Вопросы и ответы
+      </li>
+      <li nz-menu-item [routerLink]="['/news']" [routerLinkActive]="['ant-menu-item-selected']">
+        <i nz-icon nzType="notification"></i>
+        Новости
+      </li>
+      <li nz-menu-item [routerLink]="['/bonus']" [routerLinkActive]="['ant-menu-item-selected']">
+        <i nz-icon nzType="credit-card"></i>
+        Бонусная программа
+      </li>
+    </ul>
+  </nav>
+</ng-container>
+
+<ng-container *ngIf="currentWindowWidth <= 850">
+  <nav>
+    <div class="mobile-collapse">
+      <button class="mobile-collapse__btn" (click)="mobileMenuVisibility = !mobileMenuVisibility"></button>
+    </div>
+    <ul *ngIf="mobileMenuVisibility" nz-menu nzMode="inline" nzTheme="dark" nz-row nzType="flex" nzJustify="center">
+      <li class="main-page-link" nz-menu-item [routerLink]="['/']">
+        <img src="../../../assets/icons/header/card.png">
+        Главная
+      </li>
+      <li nz-menu-item [routerLink]="['/price']" [routerLinkActive]="['ant-menu-item-selected']">
+        <i nz-icon nzType="bars"></i>
+        Тарифы
+      </li>
+      <li nz-menu-item [routerLink]="['/faq']" [routerLinkActive]="['ant-menu-item-selected']">
+        <i nz-icon nzType="question"></i>
+        Вопросы и ответы
+      </li>
+      <li nz-menu-item [routerLink]="['/news']" [routerLinkActive]="['ant-menu-item-selected']">
+        <i nz-icon nzType="notification"></i>
+        Новости
+      </li>
+      <li nz-menu-item [routerLink]="['/bonus']" [routerLinkActive]="['ant-menu-item-selected']">
+        <i nz-icon nzType="credit-card"></i>
+        Бонусная программа
+      </li>
+    </ul>
+  </nav>
+</ng-container>

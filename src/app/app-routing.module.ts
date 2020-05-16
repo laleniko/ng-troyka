@@ -19,7 +19,7 @@ const routes: Routes = [
     path: 'faq',
     loadChildren: () => import('./faq/faq.module').then(m => m.FaqModule),
     data: {
-      breadcrumb: 'Вопрос/Ответ'
+      breadcrumb: 'Вопросы и Ответы'
     }
   },
   {

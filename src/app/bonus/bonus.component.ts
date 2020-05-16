@@ -15,12 +15,8 @@ export class BonusComponent implements OnInit {
 
   ngOnInit(): void {
     this.title.setTitle('Тройка - бонусы');
-    this.meta.addTags([
-      {name: 'keywords', content: 'транспортная карта Тройка Москва бонусы бонусная программа лояльности'},
-      {name: 'description', content: 'Транспортная карта Тройка. Бонусная программа лояльности Тройка.'}
-      ]
-    );
-
+    this.meta.updateTag({name: 'keywords', content: 'транспортная карта Тройка Москва бонусы бонусная программа лояльности'});
+    this.meta.updateTag({name: 'description', content: 'Транспортная карта Тройка. Бонусная программа лояльности Тройка.'});
   }
 
 }

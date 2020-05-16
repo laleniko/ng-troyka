@@ -7,7 +7,6 @@ import { NgxMetrikaService } from '@kolkov/ngx-metrika';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  title = 'ng-troyka';
 
-  constructor(private ym: NgxMetrikaService) {}
+  constructor(private ym: NgxMetrikaService) {} // TODO:check
 }
